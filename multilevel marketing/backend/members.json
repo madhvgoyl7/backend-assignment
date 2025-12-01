@@ -1,0 +1,17 @@
+[
+  {
+    "id": "3adbdeb8-0b25-41cf-ae38-3fd9fc556352",
+    "member_code": "ADMIN001",
+    "name": "Admin Madhav",
+    "email": "madhavkalra2005@gmail.com",
+    "password": "$2a$10$P/Gg6BCgGrY7MUySSXbTl.9PS3skjMYTAdEfBtapUPq99ZxN/.3Q2",
+    "sponsor_code": null,
+    "parent_code": null,
+    "position": null,
+    "left_member": null,
+    "right_member": null,
+    "left_count": 0,
+    "right_count": 0,
+    "joined_date": "2025-11-01T07:54:51.093Z"
+  }
+]

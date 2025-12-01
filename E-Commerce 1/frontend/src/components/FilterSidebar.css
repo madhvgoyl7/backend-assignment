@@ -1,0 +1,272 @@
+.filter-overlay {
+  display: none;
+}
+
+.filter-sidebar {
+  width: 280px;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+  box-shadow: var(--shadow);
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.filter-header h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+.filter-close {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  color: var(--gray-500);
+}
+
+.clear-filters-btn {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  background: var(--gray-100);
+  border: none;
+  border-radius: var(--radius);
+  color: var(--gray-700);
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.clear-filters-btn:hover {
+  background: var(--gray-200);
+}
+
+/* Filter Section */
+.filter-section {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.filter-section:last-of-type {
+  border-bottom: none;
+}
+
+.filter-section-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 0;
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  cursor: pointer;
+}
+
+.filter-options {
+  padding-bottom: 1rem;
+}
+
+.filter-options.scrollable {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Filter Option */
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--gray-700);
+}
+
+.filter-option input {
+  display: none;
+}
+
+.filter-option .checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--gray-300);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.filter-option input:checked + .checkmark {
+  border-color: var(--primary);
+}
+
+.filter-option input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+.filter-option:hover .checkmark {
+  border-color: var(--primary);
+}
+
+.option-label {
+  flex: 1;
+}
+
+/* Rating Option */
+.rating-option .stars {
+  color: var(--accent);
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+/* Price Inputs */
+.price-inputs {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.price-input-group {
+  flex: 1;
+}
+
+.price-input-group label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-bottom: 0.25rem;
+}
+
+.price-input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+}
+
+.price-input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.price-separator {
+  padding-bottom: 0.5rem;
+  color: var(--gray-400);
+}
+
+.price-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.price-presets button {
+  padding: 0.375rem 0.625rem;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  transition: all 0.2s ease;
+}
+
+.price-presets button:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+.filter-apply-mobile {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 1024px) {
+  .filter-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .filter-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .filter-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    border-radius: 0;
+    z-index: 999;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+    padding-bottom: 5rem;
+  }
+
+  .filter-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .filter-close {
+    display: block;
+  }
+
+  .filter-apply-mobile {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    max-width: 85vw;
+    padding: 1rem;
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    z-index: 1000;
+  }
+
+  .apply-filters-btn {
+    width: 100%;
+    padding: 0.875rem;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}

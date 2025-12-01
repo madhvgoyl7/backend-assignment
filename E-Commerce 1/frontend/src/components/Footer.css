@@ -1,0 +1,251 @@
+.footer {
+  background: var(--gray-900);
+  color: var(--gray-300);
+  margin-top: auto;
+}
+
+.footer-main {
+  padding: 4rem 0 3rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+/* Brand Section */
+.footer-brand {
+  grid-column: span 1;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-logo .logo-icon {
+  font-size: 1.75rem;
+}
+
+.footer-description {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--gray-400);
+}
+
+.social-links {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--gray-800);
+  color: var(--gray-400);
+  border-radius: var(--radius);
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Footer Sections */
+.footer-section {
+  padding: 0 1rem;
+}
+
+.footer-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: var(--gray-400);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-light);
+  padding-left: 5px;
+}
+
+/* Contact List */
+.contact-list {
+  list-style: none;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: var(--gray-400);
+}
+
+.contact-list svg {
+  flex-shrink: 0;
+  color: var(--primary-light);
+  margin-top: 2px;
+}
+
+/* Newsletter */
+.newsletter {
+  margin-top: 1.5rem;
+}
+
+.newsletter h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--gray-700);
+  border-radius: var(--radius);
+  background: var(--gray-800);
+  color: var(--white);
+  font-size: 0.875rem;
+}
+
+.newsletter-input::placeholder {
+  color: var(--gray-500);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.newsletter-btn {
+  padding: 0.625rem 1rem;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+}
+
+.newsletter-btn:hover {
+  background: var(--primary-dark);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--gray-800);
+}
+
+.footer-bottom .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-bottom p {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-bottom-links a {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  transition: color 0.2s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: var(--primary-light);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-main {
+    padding: 3rem 0 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand {
+    grid-column: span 1;
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-section {
+    text-align: center;
+    padding: 0;
+  }
+
+  .contact-list li {
+    justify-content: center;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
